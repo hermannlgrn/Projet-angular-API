@@ -1,0 +1,14 @@
+<header class="header-class uk-position-sticky">
+  <div class="uk-container uk-padding uk-padding-remove-top">
+    <div class="uk-flex uk-flex-between uk-flex-wrap">
+      <a class="uk-button uk-button-secondary uk-margin-top " href="/main">Accueil</a>
+      <a class="uk-button uk-button-secondary uk-margin-top" href="/create">Créer article</a>
+      @if (this.authService.email() == null) {
+        <a class="uk-button uk-button-secondary uk-margin-top " href="/connexion">Se connecter</a>
+      } @else {
+        <a class="uk-button uk-button-secondary uk-margin-top " href="/logout">{{ this.authService.email() }}</a>
+      }
+    </div>
+  </div>
+</header>
+<router-outlet/>

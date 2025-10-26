@@ -1,0 +1,67 @@
+<div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
+  <div class="uk-width-1-1">
+    <div class="uk-container">
+      <div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
+        <div class="uk-width-1-1@m">
+          <div class="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+
+            <h3 class="uk-card-title uk-text-center">Ce connecter</h3>
+
+            <form #connexionForm="ngForm" (ngSubmit)="tryConnexion()">
+
+              <!-- Champ Email -->
+              <div class="uk-margin">
+                <div class="uk-inline uk-width-1-1">
+                  <span class="uk-form-icon" uk-icon="icon: mail"></span>
+                  <input [(ngModel)]="user.email"
+                         class="uk-input uk-form-large"
+                         type="email"
+                         id="email"
+                         name="email"
+                         placeholder="Email address"
+                         required>
+                </div>
+              </div>
+
+              <!-- Champ Password -->
+              <div class="uk-margin">
+                <div class="uk-inline uk-width-1-1">
+                  <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                  <input [(ngModel)]="user.password"
+                         class="uk-input uk-form-large"
+                         type="password"
+                         id="password"
+                         name="password"
+                         placeholder="Password"
+                         required>
+                </div>
+                <a class="uk-link-muted uk-text-small" href="/forgot-password">Forgot password ?</a>
+              </div>
+
+              <!-- Message d'erreur -->
+              @if (outputErrorMessage) {
+                <div class="uk-alert-danger uk-margin uk-padding-small uk-border-rounded" uk-alert>
+                  <div class="uk-flex uk-flex-middle uk-flex-between">
+                    <div>
+                      <strong>Erreur :</strong> {{ outputErrorMessage }}
+                    </div>
+                  </div>
+                </div>
+              }
+
+              <!-- Bouton de connexion -->
+              <div class="uk-margin">
+                <button [disabled]="!connexionForm.form.valid"
+                        class="uk-button uk-button-primary uk-button-large uk-width-1-1"
+                        type="submit">
+                  Login
+                </button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

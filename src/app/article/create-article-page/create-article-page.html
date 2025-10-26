@@ -1,0 +1,42 @@
+<div class="uk-container uk-margin-top">
+
+  <h2 class="uk-heading-line"><span>Créer un nouvel article</span></h2>
+
+  <form #articleForm="ngForm" (ngSubmit)="onClickCreateArticle()" class="">
+    <div class="uk-margin">
+      <label class="uk-form-label" for="title">Titre</label>
+      <div class="uk-form-controls">
+        <input [(ngModel)]="article.title" class="uk-input" id="title" name="title" required>
+      </div>
+    </div>
+    <div class="uk-margin">
+      <label class="uk-form-label" for="author">Auteur</label>
+      <div class="uk-form-controls">
+        <input [(ngModel)]="article.author" class="uk-input" id="author" name="author" required>
+      </div>
+    </div>
+
+    <div class="uk-margin">
+      <label class="uk-form-label" for="imgPath">Chemin de l'image</label>
+      <div class="uk-form-controls">
+        <input [(ngModel)]="article.imgPath" class="uk-input" id="imgPath" name="imgPath">
+      </div>
+    </div>
+
+    <div class="uk-margin ">
+      <label class="uk-form-label" for="desc">Description</label>
+      <div class="uk-form-controls">
+        <textarea [(ngModel)]="article.desc" class="uk-textarea" id="desc" name="desc" required></textarea>
+      </div>
+    </div>
+
+
+    <div class="uk-margin">
+      <button [disabled]="!articleForm.form.valid" class="uk-button uk-button-primary" type="submit">
+        Envoyer
+      </button>
+    </div>
+
+  </form>
+
+</div>

@@ -1,0 +1,19 @@
+<!-- Page d'accueil avec les différents articles et un bouton pour les consulter et un pour les supprimées -->
+@for (a of article; track a) {
+  <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+    <div class="uk-card-media-left uk-cover-container">
+      <img alt="" src="{{a.imgPath}}" uk-cover>
+      <canvas height="400" width="600"></canvas>
+    </div>
+    <div>
+      <div class="uk-card-body">
+        <h3 class="uk-card-title">{{ a.title }} - {{ a.author }}</h3>
+        <div class="uk-flex uk-flex-between uk-margin-top">
+          <a [routerLink]="['/article', a.id]" class="uk-button uk-button-secondary ">Voir l’article</a>
+          <button [routerLink]="['/delete', a.id]" class="uk-icon-button uk-button-danger" uk-icon="trash"></button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+}
