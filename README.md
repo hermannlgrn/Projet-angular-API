@@ -1,7 +1,3 @@
-# angular-blog
-
-Blog simple développé avec Angular (TypeScript) faisant appel à une api externe. 
-
 ## 1. Objectifs
 
 Développer une application Angular 20 complète permettant la gestion d’un catalogue d’articles.
